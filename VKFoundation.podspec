@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
   s.author           = { "Keisuke Matsuo" => "matzo@viki.com" }
   s.source           = { :git => "https://github.com/yudinm/VKFoundation.git" }
 
-  s.platform     = :ios, '5.0'
-  s.ios.deployment_target = '5.0'
+  s.platform     = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
   s.requires_arc = true
 
   s.source_files = 'Classes/ios/*.{h,m}'
