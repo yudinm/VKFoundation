@@ -343,6 +343,9 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Viki Inc.";
 				TargetAttributes = {
+					1BB6AE3A18EEA36B00767FA3 = {
+						DevelopmentTeam = K2B5R7D5U8;
+					};
 					1BB6AE5518EEA36B00767FA3 = {
 						TestTargetID = 1BB6AE3A18EEA36B00767FA3;
 					};
@@ -646,6 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = K2B5R7D5U8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VKFoundation/VKFoundation-Prefix.pch";
 				INFOPLIST_FILE = "VKFoundation/VKFoundation-Info.plist";
@@ -664,6 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = K2B5R7D5U8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VKFoundation/VKFoundation-Prefix.pch";
 				INFOPLIST_FILE = "VKFoundation/VKFoundation-Info.plist";

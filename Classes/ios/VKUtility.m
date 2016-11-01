@@ -121,6 +121,10 @@
   return [NSRunLoop mainRunLoop];
 }
 
+- (id)appDelegate {
+  return (id)[UIApplication sharedApplication].delegate;
+}
+
 - (BOOL)isConnected {
   return [self.internetReach currentReachabilityStatus] != NotReachable;
 }
@@ -294,16 +298,6 @@
   }
   return statusBarHeight;
 }
-
-- (CGSize)screenSize {
-  CGSize size = [UIScreen mainScreen].bounds.size;
-  if ([VKSharedUtility isPad]) {
-    return CGSizeMake(MAX(size.width, size.height), MIN(size.width, size.height));
-  } else {
-    return CGSizeMake(MIN(size.width, size.height), MAX(size.width, size.height));
-  }
-}
-
 
 - (NSString *)appVersion {
   NSDictionary* infoDictionary = [[NSBundle mainBundle] infoDictionary];

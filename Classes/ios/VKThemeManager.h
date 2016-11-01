@@ -37,5 +37,5 @@ typedef enum {
 @end
 
 @interface UIColor (ThemeSupport)
-- (NSString*)hexValue;
+- (NSString*)hexString;
 @end

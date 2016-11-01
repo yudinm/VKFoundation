@@ -104,7 +104,7 @@
 
 @implementation UIColor (ThemeSupport)
 
-- (NSString*)hexValue {
+- (NSString*)hexString {
   const CGFloat *components = CGColorGetComponents(self.CGColor);
   CGFloat r = components[0];
   CGFloat g = components[1];

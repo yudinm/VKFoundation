@@ -6,8 +6,6 @@
 #import "NSObject+VKFoundation.h"
 #import "VKFoundationLib.h"
 
-NSString * const VKFoundationValueForKeyPathWithNilCheckExceptionNotification = @"VKFoundationValueForKeyPathWithNilCheckExceptionNotification";
-
 @implementation NSObject (VKFoundation)
 
 - (id)preferredValueForKey:(NSString*)key languageCode:(NSString*)languageCode {
@@ -31,25 +29,19 @@ NSString * const VKFoundationValueForKeyPathWithNilCheckExceptionNotification = 
   return preferredValue;
 }
 
+
 - (id)valueForKeyPathWithNilCheck:(NSString *)keyPath {
-  if (![keyPath isKindOfClass:[NSString class]]) {
-    return nil;
-  }
-  
-  @try {
-    // Guard against crash if one of the keyPath descendant is not a key value coding-compliant.
-    // e.g. key is @"aps.alert.body", but dictionary is @{@"aps": @{@"alert": @"yey crash"} }
-    if ([self respondsToSelector:@selector(valueForKeyPath:)]) {
-      return NILIFNULL([self valueForKeyPath:keyPath]);
-    } else return nil;
-  } @catch (NSException *exception) {
-    [[NSNotificationCenter defaultCenter] postNotificationName:VKFoundationValueForKeyPathWithNilCheckExceptionNotification object:self userInfo:@{@"key_path": keyPath, @"exception": exception}];
-    return nil;
-  }
+  if ([self respondsToSelector:@selector(valueForKeyPath:)]) {
+    return NILIFNULL([self valueForKeyPath:keyPath]);
+  } else return nil;
 }
 
 @end
 
 void RUN_ON_UI_THREAD(dispatch_block_t block) {
-  dispatch_async(dispatch_get_main_queue(), block);
+  if ([NSThread isMainThread]) {
+    block();
+  } else {
+    dispatch_sync(dispatch_get_main_queue(), block);
+  }
 }
