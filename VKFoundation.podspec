@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Reachability', '~> 3.1.1'
-  s.dependency 'DTCoreText', '~> 1.6.16'
-  s.dependency 'CocoaLumberjack', '~> 1.7.0'
+  s.dependency 'DTCoreText'
+  s.dependency 'CocoaLumberjack'
 
 end
